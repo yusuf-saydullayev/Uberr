@@ -14,17 +14,18 @@ const Map = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+
     (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
+      const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied');
         return;
       }
 
-      let location = await Location.getCurrentPositionAsync({});
+      const { coords } = await Location.getCurrentPositionAsync({});
       if (!Origin) {
         dispatch(setOrigin({
-          location: location.coords,
+          location: coords,
           description: null,
         }))
       }
@@ -45,11 +46,11 @@ const Map = () => {
     >
       {Origin && (
         <Marker coordinate={{
-          latitude: Origin.location.latitude,
-          longitude: Origin.location.longitude
+          latitude: Origin?.location?.latitude,
+          longitude: Origin?.location?.longitude
         }}
           title={Origin.description ? 'Location' : "It's me"}
-          description={Origin.description}
+          description={Origin?.description}
         />
 
       )}

@@ -25,7 +25,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/maskable_icon_x512.png",
         "backgroundColor": "#FCD34D"
-      }
+      },
+      "package": "com.yusufwebdev.uberr"
     },
     "web": {
       "favicon": "./assets/favicon.png"
