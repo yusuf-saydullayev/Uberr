@@ -28,7 +28,7 @@ const NavOptions = () => {
       keyExtractor={(item) => item.id}
       horizontal
       renderItem={({ item }) => (
-        <TouchableOpacity onPress={() => Handlenavigate(item.screen)} className='w-40 p-1 pb-4 pt-4 mx-2 mb-5  bg-slate-300 rounded-3xl'>
+        <TouchableOpacity onPress={() => Handlenavigate(item.screen)} className='w-40 p-1 pb-4 pt-4 mx-2 mb-5 mt-4 bg-slate-300 rounded-3xl'>
           <View>
             <Image source={{ uri: item.image }} style={{ width: 120, height: 120, resizeMode: 'contain' }} />
             <Text className='mt-2 text-lg font-bold'>{item.title}</Text>
