@@ -10,7 +10,7 @@ const NavigateCard = () => {
   const navigation = useNavigation()
   return (
     <SafeAreaView className='flex-1 bg-amber-400'>
-      <Text className='text-center py-4 text-lg'>NavigateCard</Text>
+      <Text className='text-center py-4 text-lg text-indigo-700'>Where we go?</Text>
       <View className='border-t flex-shrink'>
         <View className='px-4 mt-3'>
           <GooglePlacesAutocomplete
@@ -19,6 +19,7 @@ const NavigateCard = () => {
                 location: details.geometry.location,
                 description: data.description
               }))
+              navigation.navigate('RideCard')
             }}
             fetchDetails={true}
             enablePoweredByContainer={false}
